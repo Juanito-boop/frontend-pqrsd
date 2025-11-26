@@ -49,7 +49,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string): Promise<LoginResult | null> => {
     try {
-      const response = await fetch("http://localhost:3001/api/v1/auth/login", {
+      const response = await fetch("http://34.30.227.130:3000/api/v1/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -76,7 +76,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const logout = async () => {
     try {
-      await fetch("http://localhost:3001/api/v1/auth/logout", { method: "POST" })
+      await fetch("http://34.30.227.130:3000/api/v1/auth/logout", { method: "POST" })
     } catch (error) {
       console.error("Error during logout:", error)
     } finally {

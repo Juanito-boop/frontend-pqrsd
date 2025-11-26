@@ -172,7 +172,7 @@ export function PQRSDManagement() {
         const token = localStorage.getItem("accessToken")
         const page = 1
         const limit = 10
-        const responsePQRSD = await fetch(`http://localhost:3001/api/v1/pqrsd?page=${page}&limit=${limit}`, {
+        const responsePQRSD = await fetch(`http://34.30.227.130:3000/api/v1/pqrsd?page=${page}&limit=${limit}`, {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,

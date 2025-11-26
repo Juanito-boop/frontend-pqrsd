@@ -74,7 +74,7 @@ export function PQRSDRegistrationForm() {
     try {
       // Crear un objeto FormData para enviar archivos y datos
       const formDataToSend = new FormData()
-      
+
       // Agregar cada campo individualmente al FormData
       formDataToSend.append('type', formData.pqrsdType)
       formDataToSend.append('petitionerType', formData.petitionerType)
@@ -86,18 +86,18 @@ export function PQRSDRegistrationForm() {
       formDataToSend.append('petitionerIdNumber', formData.citizenIdNumber)
       formDataToSend.append('subject', formData.subject)
       formDataToSend.append('description', formData.description)
-      
+
       // Si es persona jurídica, agregar el nombre de la organización
       if (formData.petitionerType === 'persona_juridica' && formData.organizationName) {
         formDataToSend.append('organizationName', formData.organizationName)
       }
-      
+
       // Agregar cada archivo al FormData
       files.forEach((file) => {
         formDataToSend.append('files', file)
       })
 
-      const response = await fetch("http://localhost:3001/api/v1/pqrsd/submit", {
+      const response = await fetch("http://34.30.227.130:3000/api/v1/pqrsd/submit", {
         method: "POST",
         // No establecer Content-Type, el navegador lo configurará automáticamente con el boundary correcto
         body: formDataToSend,

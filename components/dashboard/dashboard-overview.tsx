@@ -68,7 +68,7 @@ export function DashboardOverview() {
       setLoadingStats(true)
       try {
         const token = localStorage.getItem("accessToken")
-        const responseStats = await fetch("http://localhost:3001/api/v1/analytics/summary", {
+        const responseStats = await fetch("http://34.30.227.130:3000/api/v1/analytics/summary", {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,
@@ -92,7 +92,7 @@ export function DashboardOverview() {
       setLoadingTable(true)
       try {
         const token = localStorage.getItem("accessToken")
-        const responsePQRSD = await fetch(`http://localhost:3001/api/v1/pqrsd?page=${page}&limit=${limit}`, {
+        const responsePQRSD = await fetch(`http://34.30.227.130:3000/api/v1/pqrsd?page=${page}&limit=${limit}`, {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,
@@ -314,17 +314,17 @@ export function DashboardOverview() {
               </tbody>
             </table>
           </div>
-            <div className="flex items-center justify-between mt-4">
-              <div className="text-sm text-muted-foreground">Página {page} de {totalPages}</div>
-              <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page <= 1}>
-                  Anterior
-                </Button>
-                <Button variant="outline" size="sm" onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page >= totalPages}>
-                  Siguiente
-                </Button>
-              </div>
+          <div className="flex items-center justify-between mt-4">
+            <div className="text-sm text-muted-foreground">Página {page} de {totalPages}</div>
+            <div className="flex items-center gap-2">
+              <Button variant="outline" size="sm" onClick={() => setPage(p => Math.max(1, p - 1))} disabled={page <= 1}>
+                Anterior
+              </Button>
+              <Button variant="outline" size="sm" onClick={() => setPage(p => Math.min(totalPages, p + 1))} disabled={page >= totalPages}>
+                Siguiente
+              </Button>
             </div>
+          </div>
         </CardContent>
       </Card>
     </div>
