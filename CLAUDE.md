@@ -42,7 +42,7 @@ The `logout` function is responsible for the client-side and server-side aspects
 *   **Implementation:**
     *   It attempts to make a `POST` request to the backend logout endpoint:
         ```typescript
-        await fetch("http://34.30.227.130:3000/api/v1/auth/logout", { method: "POST" })
+        await fetch("https://34.30.227.130:3000/api/v1/auth/logout", { method: "POST" })
         ```
         [components/auth/auth-provider.tsx](components/auth/auth-provider.tsx:72)
     *   It includes a `try...catch` block to handle potential errors during the API call, logging them to the console.

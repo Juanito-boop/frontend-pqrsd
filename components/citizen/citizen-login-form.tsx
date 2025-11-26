@@ -24,7 +24,7 @@ export function CitizenLoginForm() {
     setError("")
 
     try {
-      const response = await fetch(`http://34.30.227.130:3000/api/v1/pqrsd/track/${filingNumber}?accessCode=${accessCode}`, {
+      const response = await fetch(`https://34.30.227.130:3000/api/v1/pqrsd/track/${filingNumber}?accessCode=${accessCode}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

@@ -68,7 +68,7 @@ export function DashboardOverview() {
       setLoadingStats(true)
       try {
         const token = localStorage.getItem("accessToken")
-        const responseStats = await fetch("http://34.30.227.130:3000/api/v1/analytics/summary", {
+        const responseStats = await fetch("https://34.30.227.130:3000/api/v1/analytics/summary", {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,
@@ -92,7 +92,7 @@ export function DashboardOverview() {
       setLoadingTable(true)
       try {
         const token = localStorage.getItem("accessToken")
-        const responsePQRSD = await fetch(`http://34.30.227.130:3000/api/v1/pqrsd?page=${page}&limit=${limit}`, {
+        const responsePQRSD = await fetch(`https://34.30.227.130:3000/api/v1/pqrsd?page=${page}&limit=${limit}`, {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,
